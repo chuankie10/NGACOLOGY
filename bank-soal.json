@@ -1,0 +1,2060 @@
+{
+  "title": "Bank Soal NGACOLOGY",
+  "version": 1,
+  "language": "id-ID",
+  "description": "50 pertanyaan humor dan keseharian untuk game NGACOLOGY. Setiap pertanyaan memiliki lima jawaban utama. Bobot poin ditentukan acak oleh game saat ronde dimulai.",
+  "questionCount": 50,
+  "answerCountPerQuestion": 5,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sesuatu yang sering dicari saat sedang buru-buru",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Kunci",
+          "keywords": [
+            "kunci"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "HP",
+          "keywords": [
+            "hp"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Dompet",
+          "keywords": [
+            "dompet"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Helm",
+          "keywords": [
+            "helm"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kacamata",
+          "keywords": [
+            "kacamata"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Alasan orang telat bangun",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Alarm tidak bunyi",
+          "keywords": [
+            "alarm tidak bunyi"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Tidur kemalaman",
+          "keywords": [
+            "tidur kemalaman"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Matikan alarm lalu tidur lagi",
+          "keywords": [
+            "matikan alarm lalu tidur lagi"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Listrik mati",
+          "keywords": [
+            "listrik mati"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kebanyakan begadang",
+          "keywords": [
+            "kebanyakan begadang"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Makanan yang enak dimakan tengah malam",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Mi instan",
+          "keywords": [
+            "mi instan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Nasi goreng",
+          "keywords": [
+            "nasi goreng"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Seblak",
+          "keywords": [
+            "seblak"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Martabak",
+          "keywords": [
+            "martabak"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Ayam geprek",
+          "keywords": [
+            "ayam geprek"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Hal yang bikin grup WhatsApp ramai",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Ada yang kirim hoaks",
+          "keywords": [
+            "ada yang kirim hoaks"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Undangan nikah",
+          "keywords": [
+            "undangan nikah"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Gosip",
+          "keywords": [
+            "gosip"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Meme lucu",
+          "keywords": [
+            "meme lucu"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Salah kirim chat",
+          "keywords": [
+            "salah kirim chat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Kalimat yang sering diucapkan saat dompet tipis",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Tanggal tua",
+          "keywords": [
+            "tanggal tua"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Besok gajian",
+          "keywords": [
+            "besok gajian"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Lagi hemat",
+          "keywords": [
+            "lagi hemat"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Nanti dulu",
+          "keywords": [
+            "nanti dulu"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Air putih saja",
+          "keywords": [
+            "air putih saja"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Benda yang wajib dibawa saat keluar rumah",
+      "answers": [
+        {
+          "id": 1,
+          "text": "HP",
+          "keywords": [
+            "hp"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Dompet",
+          "keywords": [
+            "dompet"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Kunci",
+          "keywords": [
+            "kunci"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Tas",
+          "keywords": [
+            "tas"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kendaraan/helm",
+          "keywords": [
+            "kendaraan/helm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Alasan seseorang mendadak offline",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Kuota habis",
+          "keywords": [
+            "kuota habis"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Baterai habis",
+          "keywords": [
+            "baterai habis"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Ketiduran",
+          "keywords": [
+            "ketiduran"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Menghindari chat",
+          "keywords": [
+            "menghindari chat"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Sinyal jelek",
+          "keywords": [
+            "sinyal jelek"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Hal yang bikin orang pura-pura sibuk",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Bos lewat",
+          "keywords": [
+            "bos lewat"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Ada tugas mendadak",
+          "keywords": [
+            "ada tugas mendadak"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Ditagih utang",
+          "keywords": [
+            "ditagih utang"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Tidak mau diajak ngobrol",
+          "keywords": [
+            "tidak mau diajak ngobrol"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Deadline",
+          "keywords": [
+            "deadline"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tempat yang sering jadi lokasi orang melamun",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Kamar mandi",
+          "keywords": [
+            "kamar mandi"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Kasur",
+          "keywords": [
+            "kasur"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Angkringan/warung kopi",
+          "keywords": [
+            "angkringan/warung kopi"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Jendela",
+          "keywords": [
+            "jendela"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kendaraan umum",
+          "keywords": [
+            "kendaraan umum"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Kebiasaan saat menunggu balasan chat",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Cek HP terus",
+          "keywords": [
+            "cek hp terus"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Buka tutup aplikasi",
+          "keywords": [
+            "buka tutup aplikasi"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Kirim tanda tanya",
+          "keywords": [
+            "kirim tanda tanya"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Stalking status",
+          "keywords": [
+            "stalking status"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Menyesal sudah chat",
+          "keywords": [
+            "menyesal sudah chat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Benda yang sering hilang di rumah",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Remote TV",
+          "keywords": [
+            "remote tv"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Kaos kaki",
+          "keywords": [
+            "kaos kaki"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Gunting",
+          "keywords": [
+            "gunting"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Charger",
+          "keywords": [
+            "charger"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kunci",
+          "keywords": [
+            "kunci"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Alasan orang menghapus pesan",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Salah kirim",
+          "keywords": [
+            "salah kirim"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Typo",
+          "keywords": [
+            "typo"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Takut ketahuan",
+          "keywords": [
+            "takut ketahuan"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Berubah pikiran",
+          "keywords": [
+            "berubah pikiran"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Malu sendiri",
+          "keywords": [
+            "malu sendiri"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Ciri-ciri orang sedang jatuh cinta",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Senyum sendiri",
+          "keywords": [
+            "senyum sendiri"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Sering cek HP",
+          "keywords": [
+            "sering cek hp"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Dandan lebih rapi",
+          "keywords": [
+            "dandan lebih rapi"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Cari perhatian",
+          "keywords": [
+            "cari perhatian"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Salah tingkah",
+          "keywords": [
+            "salah tingkah"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Hal yang bikin pekerja ingin cepat pulang",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Sudah jam pulang",
+          "keywords": [
+            "sudah jam pulang"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Lapar",
+          "keywords": [
+            "lapar"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Macet menunggu",
+          "keywords": [
+            "macet menunggu"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Ada janji",
+          "keywords": [
+            "ada janji"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Pekerjaan menumpuk",
+          "keywords": [
+            "pekerjaan menumpuk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Jawaban saat ditanya kapan nikah",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Doakan saja",
+          "keywords": [
+            "doakan saja"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Nunggu mapan",
+          "keywords": [
+            "nunggu mapan"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Belum ada calon",
+          "keywords": [
+            "belum ada calon"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Tahun depan",
+          "keywords": [
+            "tahun depan"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Rahasia",
+          "keywords": [
+            "rahasia"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Sesuatu yang bikin suasana kondangan canggung",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Ditanya kapan nikah",
+          "keywords": [
+            "ditanya kapan nikah"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Ketemu mantan",
+          "keywords": [
+            "ketemu mantan"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Tidak kenal siapa-siapa",
+          "keywords": [
+            "tidak kenal siapa-siapa"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Salah kostum",
+          "keywords": [
+            "salah kostum"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Ditanya kerja di mana",
+          "keywords": [
+            "ditanya kerja di mana"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Barang yang sering dipinjam tapi lupa dikembalikan",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Pulpen",
+          "keywords": [
+            "pulpen"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Charger",
+          "keywords": [
+            "charger"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Uang",
+          "keywords": [
+            "uang"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Payung",
+          "keywords": [
+            "payung"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Helm",
+          "keywords": [
+            "helm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Hal yang dilakukan saat pura-pura paham",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Mengangguk",
+          "keywords": [
+            "mengangguk"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Bilang oh begitu",
+          "keywords": [
+            "bilang oh begitu"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Senyum",
+          "keywords": [
+            "senyum"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Mencatat",
+          "keywords": [
+            "mencatat"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Ikut tertawa",
+          "keywords": [
+            "ikut tertawa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Momen paling menegangkan saat belanja online",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Menunggu paket",
+          "keywords": [
+            "menunggu paket"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Paket belum bergerak",
+          "keywords": [
+            "paket belum bergerak"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Barang tidak sesuai",
+          "keywords": [
+            "barang tidak sesuai"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "COD tidak ada uang pas",
+          "keywords": [
+            "cod tidak ada uang pas"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Ukuran salah",
+          "keywords": [
+            "ukuran salah"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Alasan orang tidak mengangkat telepon",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Sedang mandi",
+          "keywords": [
+            "sedang mandi"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "HP silent",
+          "keywords": [
+            "hp silent"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Tidak kenal nomor",
+          "keywords": [
+            "tidak kenal nomor"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Sedang tidur",
+          "keywords": [
+            "sedang tidur"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Tidak mau diganggu",
+          "keywords": [
+            "tidak mau diganggu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "Hewan yang sering dijadikan meme",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Kucing",
+          "keywords": [
+            "kucing"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Anjing",
+          "keywords": [
+            "anjing"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Bebek",
+          "keywords": [
+            "bebek"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Monyet",
+          "keywords": [
+            "monyet"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Capybara",
+          "keywords": [
+            "capybara"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Hal yang membuat orang langsung semangat",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Gajian",
+          "keywords": [
+            "gajian"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Makanan gratis",
+          "keywords": [
+            "makanan gratis"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Diskon besar",
+          "keywords": [
+            "diskon besar"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Libur mendadak",
+          "keywords": [
+            "libur mendadak"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Dapat transfer",
+          "keywords": [
+            "dapat transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "Kalimat sakti saat ditagih utang",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Nanti saya transfer",
+          "keywords": [
+            "nanti saya transfer"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Lupa kemarin",
+          "keywords": [
+            "lupa kemarin"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Besok ya",
+          "keywords": [
+            "besok ya"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Lagi belum pegang uang",
+          "keywords": [
+            "lagi belum pegang uang"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Nomor rekeningnya kirim lagi",
+          "keywords": [
+            "nomor rekeningnya kirim lagi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Isi tas yang tidak pernah terpakai",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Struk belanja",
+          "keywords": [
+            "struk belanja"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Tisu",
+          "keywords": [
+            "tisu"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Kabel",
+          "keywords": [
+            "kabel"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Permen",
+          "keywords": [
+            "permen"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Barang cadangan",
+          "keywords": [
+            "barang cadangan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "Hal yang bikin orang panik saat bangun tidur",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Sudah kesiangan",
+          "keywords": [
+            "sudah kesiangan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "HP hilang",
+          "keywords": [
+            "hp hilang"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Ada telepon penting",
+          "keywords": [
+            "ada telepon penting"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Lupa ada janji",
+          "keywords": [
+            "lupa ada janji"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Baterai HP habis",
+          "keywords": [
+            "baterai hp habis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Makanan yang sering jadi rebutan",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Ayam goreng",
+          "keywords": [
+            "ayam goreng"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Rendang",
+          "keywords": [
+            "rendang"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Kerupuk",
+          "keywords": [
+            "kerupuk"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Kentang goreng",
+          "keywords": [
+            "kentang goreng"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Potongan terakhir pizza",
+          "keywords": [
+            "potongan terakhir pizza"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "Alasan seseorang senyum melihat HP",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Chat gebetan",
+          "keywords": [
+            "chat gebetan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Gajian masuk",
+          "keywords": [
+            "gajian masuk"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Meme lucu",
+          "keywords": [
+            "meme lucu"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Dapat kabar baik",
+          "keywords": [
+            "dapat kabar baik"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Diskon muncul",
+          "keywords": [
+            "diskon muncul"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Hal yang sering dilakukan saat rapat online",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Matikan kamera",
+          "keywords": [
+            "matikan kamera"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Mute mikrofon",
+          "keywords": [
+            "mute mikrofon"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Sambil makan",
+          "keywords": [
+            "sambil makan"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Buka aplikasi lain",
+          "keywords": [
+            "buka aplikasi lain"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Mengangguk padahal tidak dengar",
+          "keywords": [
+            "mengangguk padahal tidak dengar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Tempat yang paling dihindari saat akhir bulan",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Mal",
+          "keywords": [
+            "mal"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Restoran mahal",
+          "keywords": [
+            "restoran mahal"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Minimarket",
+          "keywords": [
+            "minimarket"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Tempat nongkrong",
+          "keywords": [
+            "tempat nongkrong"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Marketplace",
+          "keywords": [
+            "marketplace"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Benda yang sering diperebutkan di rumah",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Remote TV",
+          "keywords": [
+            "remote tv"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Kamar mandi",
+          "keywords": [
+            "kamar mandi"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Charger",
+          "keywords": [
+            "charger"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Kipas angin",
+          "keywords": [
+            "kipas angin"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Selimut",
+          "keywords": [
+            "selimut"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "question": "Alasan orang membatalkan olahraga",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Mager",
+          "keywords": [
+            "mager"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Hujan",
+          "keywords": [
+            "hujan"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Capek kerja",
+          "keywords": [
+            "capek kerja"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Tidak ada teman",
+          "keywords": [
+            "tidak ada teman"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kasur terlalu nyaman",
+          "keywords": [
+            "kasur terlalu nyaman"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "question": "Hal yang bikin tetangga jadi bahan obrolan",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Karaoke keras",
+          "keywords": [
+            "karaoke keras"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Renovasi rumah",
+          "keywords": [
+            "renovasi rumah"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Parkir sembarangan",
+          "keywords": [
+            "parkir sembarangan"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Peliharaan berisik",
+          "keywords": [
+            "peliharaan berisik"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Sering pinjam barang",
+          "keywords": [
+            "sering pinjam barang"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "question": "Kata yang sering salah ketik saat buru-buru",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Sayang",
+          "keywords": [
+            "sayang"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Oke",
+          "keywords": [
+            "oke"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Makasih",
+          "keywords": [
+            "makasih"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Dimana",
+          "keywords": [
+            "dimana"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Nanti",
+          "keywords": [
+            "nanti"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "question": "Ciri-ciri orang sok kaya",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Pamer barang",
+          "keywords": [
+            "pamer barang"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Foto di mobil mewah",
+          "keywords": [
+            "foto di mobil mewah"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Ngomong investasi",
+          "keywords": [
+            "ngomong investasi"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Traktir sekali lalu cerita terus",
+          "keywords": [
+            "traktir sekali lalu cerita terus"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Pakai barang bermerek",
+          "keywords": [
+            "pakai barang bermerek"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "question": "Hal yang paling menyebalkan saat naik kendaraan umum",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Berdesakan",
+          "keywords": [
+            "berdesakan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Macet",
+          "keywords": [
+            "macet"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "AC mati",
+          "keywords": [
+            "ac mati"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Bau tidak enak",
+          "keywords": [
+            "bau tidak enak"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Tidak kebagian tempat duduk",
+          "keywords": [
+            "tidak kebagian tempat duduk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "question": "Alasan orang membuka kulkas berkali-kali",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Cari makanan",
+          "keywords": [
+            "cari makanan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Berharap ada makanan baru",
+          "keywords": [
+            "berharap ada makanan baru"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Haus",
+          "keywords": [
+            "haus"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Bingung mau makan apa",
+          "keywords": [
+            "bingung mau makan apa"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Cek stok",
+          "keywords": [
+            "cek stok"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "question": "Benda yang wajib ada di meja kerja",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Laptop",
+          "keywords": [
+            "laptop"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "HP",
+          "keywords": [
+            "hp"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Kopi",
+          "keywords": [
+            "kopi"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Botol minum",
+          "keywords": [
+            "botol minum"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Charger",
+          "keywords": [
+            "charger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "question": "Hal yang membuat seseorang merasa dewasa",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Bayar tagihan",
+          "keywords": [
+            "bayar tagihan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Belanja kebutuhan",
+          "keywords": [
+            "belanja kebutuhan"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Punya tanggung jawab",
+          "keywords": [
+            "punya tanggung jawab"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Mengatur keuangan",
+          "keywords": [
+            "mengatur keuangan"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Sakit pinggang",
+          "keywords": [
+            "sakit pinggang"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "question": "Alasan orang tidak membalas komentar",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Tidak tahu jawabannya",
+          "keywords": [
+            "tidak tahu jawabannya"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Malas debat",
+          "keywords": [
+            "malas debat"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Tidak membaca",
+          "keywords": [
+            "tidak membaca"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Takut salah",
+          "keywords": [
+            "takut salah"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Sedang sibuk",
+          "keywords": [
+            "sedang sibuk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "question": "Hal yang sering dijanjikan saat tahun baru",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Rajin olahraga",
+          "keywords": [
+            "rajin olahraga"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Menabung",
+          "keywords": [
+            "menabung"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Diet",
+          "keywords": [
+            "diet"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Berhenti merokok",
+          "keywords": [
+            "berhenti merokok"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Belajar hal baru",
+          "keywords": [
+            "belajar hal baru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "question": "Sesuatu yang bikin orang gagal fokus",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Notifikasi HP",
+          "keywords": [
+            "notifikasi hp"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Suara berisik",
+          "keywords": [
+            "suara berisik"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Lapar",
+          "keywords": [
+            "lapar"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Ngantuk",
+          "keywords": [
+            "ngantuk"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Pikiran melayang",
+          "keywords": [
+            "pikiran melayang"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "question": "Kalimat yang sering terdengar dari ibu",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Sudah makan?",
+          "keywords": [
+            "sudah makan?"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Jangan lupa pulang",
+          "keywords": [
+            "jangan lupa pulang"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Matikan lampu",
+          "keywords": [
+            "matikan lampu"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Hemat uang",
+          "keywords": [
+            "hemat uang"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Kapan beres-beres?",
+          "keywords": [
+            "kapan beres-beres?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "question": "Hal yang bikin orang malu di tempat umum",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Tersandung",
+          "keywords": [
+            "tersandung"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Salah panggil orang",
+          "keywords": [
+            "salah panggil orang"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Salah masuk ruangan",
+          "keywords": [
+            "salah masuk ruangan"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Resleting terbuka",
+          "keywords": [
+            "resleting terbuka"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Salah kostum",
+          "keywords": [
+            "salah kostum"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "question": "Barang yang sering dibeli padahal sudah punya",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Baju",
+          "keywords": [
+            "baju"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Sepatu",
+          "keywords": [
+            "sepatu"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Gelas",
+          "keywords": [
+            "gelas"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Skincare",
+          "keywords": [
+            "skincare"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Aksesori HP",
+          "keywords": [
+            "aksesori hp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "question": "Alasan orang betah di warung kopi",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Kopi enak",
+          "keywords": [
+            "kopi enak"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Wi-Fi gratis",
+          "keywords": [
+            "wi-fi gratis"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Bisa ngobrol",
+          "keywords": [
+            "bisa ngobrol"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Harga terjangkau",
+          "keywords": [
+            "harga terjangkau"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Ada colokan",
+          "keywords": [
+            "ada colokan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "question": "Hal yang dilakukan saat listrik padam",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Cari senter",
+          "keywords": [
+            "cari senter"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Nyalakan flash HP",
+          "keywords": [
+            "nyalakan flash hp"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Keluar rumah",
+          "keywords": [
+            "keluar rumah"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Mengeluh",
+          "keywords": [
+            "mengeluh"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Tidur",
+          "keywords": [
+            "tidur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "question": "Hal yang bikin seseorang langsung ilfeel",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Bau badan",
+          "keywords": [
+            "bau badan"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Sombong",
+          "keywords": [
+            "sombong"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Tidak sopan",
+          "keywords": [
+            "tidak sopan"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Suka bohong",
+          "keywords": [
+            "suka bohong"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Tidak menghargai orang",
+          "keywords": [
+            "tidak menghargai orang"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "question": "Profesi yang sering jadi bahan candaan",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Politisi",
+          "keywords": [
+            "politisi"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Influencer",
+          "keywords": [
+            "influencer"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Sales",
+          "keywords": [
+            "sales"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Programmer",
+          "keywords": [
+            "programmer"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Bos",
+          "keywords": [
+            "bos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "question": "Alasan orang ingin punya robot di rumah",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Bantu bersih-bersih",
+          "keywords": [
+            "bantu bersih-bersih"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Masak",
+          "keywords": [
+            "masak"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Cuci piring",
+          "keywords": [
+            "cuci piring"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Teman ngobrol",
+          "keywords": [
+            "teman ngobrol"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Bantu pekerjaan",
+          "keywords": [
+            "bantu pekerjaan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "question": "Hal yang paling ditakuti saat presentasi",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Lupa materi",
+          "keywords": [
+            "lupa materi"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Proyektor rusak",
+          "keywords": [
+            "proyektor rusak"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Ditanya sulit",
+          "keywords": [
+            "ditanya sulit"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Suara gemetar",
+          "keywords": [
+            "suara gemetar"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "File tidak bisa dibuka",
+          "keywords": [
+            "file tidak bisa dibuka"
+          ]
+        }
+      ]
+    }
+  ]
+}
