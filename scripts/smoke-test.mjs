@@ -9,7 +9,7 @@ class FakeElement {
   constructor(id = "") {
     this.id = id; this.children = []; this.listeners = {}; this.style = {};
     this.value = id === "username" ? "Penonton" : "";
-    this.checked = id === "botToggle";
+    this.checked = false;
     this.disabled = false; this.textContent = ""; this.className = "";
     this.classList = {
       add: (...names) => { this._classes = new Set([...(this._classes || []), ...names]); },
@@ -65,12 +65,14 @@ assert.equal(state.players.get("pemain satu").score,scoreAfterFirst,"Jawaban dup
 for (let i=1;i<5;i++) window.handleTikTokComment("Pemain "+(i+1),"",q.answers[i]);
 assert.equal(state.found.size,5);
 assert.equal(state.phase,"round-ended");
+assert.equal(document.getElementById("startBtn").disabled,true);
 assert.equal([...state.players.values()].reduce((n,p)=>n+p.score,0),385,"Total bobot satu ronde harus 385");
 assert.ok(document.getElementById("leaderboard").children.length>=1);
 
 document.getElementById("nextBtn").listeners.click();
 assert.equal(state.round,1);
 assert.equal(state.phase,"playing");
+assert.equal(document.getElementById("startBtn").disabled,false);
 document.getElementById("startBtn").listeners.click();
 assert.equal(state.phase,"paused");
 document.getElementById("startBtn").listeners.click();
