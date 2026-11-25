@@ -48,12 +48,16 @@ const boot = new Function("document","window","setInterval","clearInterval","set
   scriptMatch[0][1] + "\nreturn {state, QUESTION_BANK};");
 const {state, QUESTION_BANK} = boot(document,window,setIntervalFake,clearIntervalFake,setTimeoutFake,clearTimeoutFake);
 document.getElementById("botToggle").checked = false;
+const durationSelect=document.getElementById("roundDuration");
+for(const seconds of ["60","90","120"]){durationSelect.value=seconds;durationSelect.listeners.change();assert.equal(state.roundDuration,Number(seconds));}
+durationSelect.value="90";durationSelect.listeners.change();
 document.getElementById("startBtn").listeners.click();
 assert.equal(state.phase,"playing");
+assert.equal(state.seconds,90,"Ronde harus mengikuti pilihan durasi 90 detik");
 assert.equal(document.getElementById("answers").children.length,5);
 assert.equal(QUESTION_BANK.length,50);
 timers.get(state.timer)();
-assert.equal(state.seconds,119,"Timer harus berkurang satu detik dari 120 detik");
+assert.equal(state.seconds,89,"Timer 90 detik harus berkurang menjadi 89");
 document.getElementById("startBtn").listeners.click();
 assert.equal(state.phase,"paused");
 document.getElementById("startBtn").listeners.click();
@@ -79,8 +83,10 @@ assert.equal(document.getElementById("startBtn").disabled,true);
 assert.equal([...state.players.values()].reduce((n,p)=>n+p.score,0),385,"Total bobot satu ronde harus 385");
 assert.ok(document.getElementById("leaderboard").children.length>=1);
 
+durationSelect.value="60";durationSelect.listeners.change();
 document.getElementById("nextBtn").listeners.click();
 assert.equal(state.round,1);
+assert.equal(state.seconds,60,"Ronde berikutnya harus memakai pilihan durasi 60 detik");
 assert.equal(state.phase,"playing");
 assert.equal(document.getElementById("startBtn").disabled,false);
 document.getElementById("advanceMode").value="auto";
@@ -99,4 +105,4 @@ assert.equal(state.round,2,"Tombol lanjut harus bisa mempercepat mode otomatis")
 document.getElementById("resetBtn").listeners.click();
 assert.equal(state.phase,"idle");
 assert.equal(state.players.size,0);
-console.log("NGACOLOGY smoke test PASS: start, 5 answers, score, duplicate protection, TikTok hook, auto/manual round advance, pause/resume, reset.");
+console.log("NGACOLOGY smoke test PASS: selectable 60/90/120-second durations, timer countdown, scoring, duplicate protection, TikTok hook, auto/manual round advance, pause/resume, reset.");
