@@ -7,11 +7,11 @@ const bankFile = JSON.parse(fs.readFileSync(new URL("../bank-soal.json", import.
 assert.equal(bankFile.questions.length, 50, "Bank soal harus berisi 50 pertanyaan");
 assert.ok(bankFile.questions.every(q => Array.isArray(q.answers) && q.answers.length === 5), "Setiap pertanyaan harus memiliki 5 jawaban");
 
-const scripts = [...html.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)];
+const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 assert.equal(scripts.length, 1, "Harus ada tepat satu inline script utama");
 new Function(scripts[0][1]);
 
-const embeddedMatch = html.match(/const QUESTION_BANK = (\\[[\\s\\S]*?\\]);\\nconst WEIGHTS/);
+const embeddedMatch = html.match(/const QUESTION_BANK = (\[[\s\S]*?\]);\nconst WEIGHTS/);
 assert.ok(embeddedMatch, "Bank soal harus tertanam di halaman game");
 const embeddedBank = JSON.parse(embeddedMatch[1]);
 assert.equal(embeddedBank.length, 50, "Game harus memuat 50 pertanyaan");
