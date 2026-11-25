@@ -1,7 +1,18 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
 const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
+const serverPath = fileURLToPath(new URL("../server/index.js", import.meta.url));
+const serverCheck = spawnSync(process.execPath, ["--check", serverPath], { encoding: "utf8" });
+assert.equal(serverCheck.status, 0, "Sintaks server Node.js harus valid: " + (serverCheck.stderr || ""));
+for (const scriptName of ["termux-setup.sh", "termux-start.sh", "termux-stop.sh"]) {
+  const scriptPath = fileURLToPath(new URL("../scripts/" + scriptName, import.meta.url));
+  const shellCheck = spawnSync("bash", ["-n", scriptPath], { encoding: "utf8" });
+  assert.equal(shellCheck.status, 0, "Sintaks " + scriptName + " harus valid: " + (shellCheck.stderr || ""));
+}
+
 const bankFile = JSON.parse(fs.readFileSync(new URL("../bank-soal.json", import.meta.url), "utf8"));
 
 assert.equal(bankFile.questions.length, 50, "Bank soal harus berisi 50 pertanyaan");
@@ -29,7 +40,9 @@ for (const required of [
   'id="tiktokPanel"',
   'tiktok:chat',
   'bridgeConnectBtn',
+  'http://127.0.0.1:3000',
+  '127\\.0\\.0\\.1',
   'state.phase==="finished"'
 ]) assert.ok(html.includes(required), 'Fitur penting tidak ditemukan: ' + required);
 
-console.log("NGACOLOGY validation PASS: HTML script syntax, 50 questions, 250 answers, scoring, timer, leaderboard, Auto-Bot and TikTok hook.");
+console.log("NGACOLOGY validation PASS: game script, 50 questions, 250 answers, scoring, timer, leaderboard, Auto-Bot, TikTok hook, Node bridge and Android Termux scripts.");
