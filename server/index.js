@@ -1,23 +1,29 @@
 import express from "express";
 import http from "node:http";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { Server } from "socket.io";
 import { ControlEvent, TikTokLiveConnection, WebcastEvent } from "tiktok-live-connector";
 
+const here = path.dirname(fileURLToPath(import.meta.url));
+const appRoot = path.resolve(here, "..");
 const app = express();
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, { cors: { origin: "*", methods: ["GET"] } });
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT || 3000);
+const HOST = process.env.HOST || (process.env.RENDER ? "0.0.0.0" : "127.0.0.1");
 const TIKTOK_USERNAME = (process.env.TIKTOK_USERNAME || "chuanki10").replace(/^@/, "");
 let bridgeStatus = { state: "starting", username: TIKTOK_USERNAME, message: "Menyiapkan koneksi TikTok LIVE." };
 let totalComments = 0;
 let activeConnection = null;
+let shuttingDown = false;
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Cache-Control", "no-store");
   next();
 });
-app.get("/", (_req, res) => res.json({ service: "NGACOLOGY LIVE Bridge", ...bridgeStatus, totalComments }));
+app.get("/", (_req, res) => res.sendFile(path.join(appRoot, "index.html")));
 app.get("/health", (_req, res) => res.status(200).json({ ok: true }));
 app.get("/status", (_req, res) => res.json({ ...bridgeStatus, totalComments }));
 
@@ -32,12 +38,10 @@ io.on("connection", socket => {
   socket.on("keepalive", () => {});
 });
 
-async function sleep(ms) {
-  await new Promise(resolve => setTimeout(resolve, ms));
-}
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function runTikTokBridge() {
-  while (true) {
+  while (!shuttingDown) {
     const connection = new TikTokLiveConnection(TIKTOK_USERNAME);
     activeConnection = connection;
 
@@ -65,33 +69,41 @@ async function runTikTokBridge() {
     });
 
     try {
-      setStatus("waiting_live", "Menunggu @"+TIKTOK_USERNAME+" memulai LIVE.");
+      setStatus("waiting_live", "Menunggu @" + TIKTOK_USERNAME + " memulai LIVE.");
       await connection.waitUntilLive(45);
+      if (shuttingDown) break;
       setStatus("connecting", "LIVE terdeteksi. Menghubungkan pembaca komentar...");
       await connection.connect();
-      setStatus("connected", "Terhubung ke LIVE @"+TIKTOK_USERNAME+". Menunggu komentar penonton.");
+      setStatus("connected", "Terhubung ke LIVE @" + TIKTOK_USERNAME + ". Menunggu komentar penonton.");
       await new Promise(resolve => connection.once(ControlEvent.DISCONNECTED, resolve));
-      setStatus("reconnecting", "Koneksi terputus. Mencoba menyambung kembali...");
+      if (!shuttingDown) setStatus("reconnecting", "Koneksi terputus. Mencoba menyambung kembali...");
     } catch (error) {
       const message = String(error?.message || error || "Koneksi gagal.");
-      setStatus("warning", message.slice(0, 180));
+      if (!shuttingDown) setStatus("warning", message.slice(0, 180));
     } finally {
       try { await connection.disconnect(); } catch {}
       activeConnection = null;
     }
-    await sleep(5000);
+    if (!shuttingDown) await sleep(5000);
   }
 }
 
-httpServer.listen(PORT, "0.0.0.0", () => {
-  console.log("NGACOLOGY LIVE Bridge listening on", PORT);
+httpServer.listen(PORT, HOST, () => {
+  console.log(`NGACOLOGY siap di http://${HOST}:${PORT}`);
+  console.log("Buka alamat ini di browser HP yang sama.");
   runTikTokBridge().catch(error => {
     console.error("Bridge fatal error:", error);
     setStatus("error", String(error?.message || error));
   });
 });
 
-process.once("SIGTERM", async () => {
+async function shutdown() {
+  if (shuttingDown) return;
+  shuttingDown = true;
   try { await activeConnection?.disconnect(); } catch {}
+  io.close();
   httpServer.close(() => process.exit(0));
-});
+  setTimeout(() => process.exit(0), 3000).unref();
+}
+process.once("SIGINT", shutdown);
+process.once("SIGTERM", shutdown);
