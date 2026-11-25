@@ -29,6 +29,7 @@ function setStatus(state, message) {
 
 io.on("connection", socket => {
   socket.emit("bridge:status", { ...bridgeStatus, totalComments });
+  socket.on("keepalive", () => {});
 });
 
 async function sleep(ms) {
@@ -82,7 +83,7 @@ async function runTikTokBridge() {
   }
 }
 
-httpServer.listen(PORT, () => {
+httpServer.listen(PORT, "0.0.0.0", () => {
   console.log("NGACOLOGY LIVE Bridge listening on", PORT);
   runTikTokBridge().catch(error => {
     console.error("Bridge fatal error:", error);
