@@ -26,6 +26,9 @@ for (const required of [
   'function drawBoard()',
   'function startBot()',
   'window.handleTikTokComment',
+  'id="tiktokPanel"',
+  'tiktok:chat',
+  'bridgeConnectBtn',
   'state.phase==="finished"'
 ]) assert.ok(html.includes(required), 'Fitur penting tidak ditemukan: ' + required);
 
