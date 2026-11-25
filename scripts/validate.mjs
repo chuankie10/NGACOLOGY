@@ -16,6 +16,7 @@ assert.ok(embeddedMatch, "Bank soal harus tertanam di halaman game");
 const embeddedBank = JSON.parse(embeddedMatch[1]);
 assert.equal(embeddedBank.length, 50, "Game harus memuat 50 pertanyaan");
 assert.ok(embeddedBank.every(q => q.answers.length === 5), "Game harus memuat 5 jawaban per pertanyaan");
+assert.deepEqual(embeddedBank, bankFile.questions.map(q => ({question:q.question, answers:q.answers.map(a => a.text)})), "Soal yang tertanam di game harus sama dengan bank-soal.json");
 
 for (const required of [
   'const WEIGHTS = [10,25,50,100,200]',
