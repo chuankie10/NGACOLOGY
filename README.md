@@ -1,6 +1,6 @@
 # NGACOLOGY
 
-**Ilmu boleh ngawur, poin harus tinggi!**
+**JAWABAN BOLEH NGAWUR, POIN HARUS TINGGI!**
 
 NGACOLOGY adalah game kuis tebak-jawaban bergaya arcade, dibuat mobile-first untuk layar vertikal dan sesi hiburan/live.
 
@@ -19,6 +19,26 @@ Buka `index.html` melalui browser atau host sebagai situs statis. Tidak memerluk
 
 ## Catatan integrasi TikTok
 Mode yang tersedia saat ini adalah simulasi komentar di browser. Hook global disiapkan untuk integrasi, tetapi koneksi TikTok Live sungguhan memerlukan layanan/konektor eksternal yang kompatibel dan konfigurasi terpisah. Jangan menganggap chat simulasi sebagai chat live sungguhan.
+
+## Integrasi TikTok LIVE (uji coba)
+
+Repository ini sekarang menyertakan server Node.js pada folder `server/` dan konfigurasi Render Blueprint pada `render.yaml`.
+
+- Server membaca komentar LIVE publik untuk akun yang ditetapkan melalui `TIKTOK_USERNAME` (default: `chuanki10`).
+- Halaman game menerima komentar server melalui Socket.IO dan meneruskannya ke `window.handleTikTokComment()`.
+- Tidak diperlukan password, OTP, cookie, atau login TikTok untuk membaca LIVE publik.
+- Konektor `tiktok-live-connector` adalah proyek tidak resmi/reverse-engineered; TikTok dapat mengubah protokol dan koneksi bisa gagal sewaktu-waktu.
+- Konektor ini menggunakan layanan signing pihak ketiga. Jangan menambahkan cookie atau kredensial akun ke konfigurasi.
+- Library konektor berlisensi AGPL-3.0; kode integrasi server di repository ini tersedia secara publik.
+
+### Deploy server penghubung
+1. Masuk ke Render dan hubungkan akun GitHub.
+2. Pilih **New → Blueprint** lalu pilih repository `chuankie10/NGACOLOGY`.
+3. Render akan membaca `render.yaml`; pilih paket **Free** dan deploy.
+4. Setelah layanan aktif, salin alamat `https://...onrender.com`.
+5. Buka game NGACOLOGY, masukkan alamat tersebut di panel **TIKTOK LIVE**, lalu tekan **HUBUNGKAN LIVE**.
+
+Render Free dapat tidur setelah 15 menit tanpa lalu lintas masuk; pesan WebSocket masuk menjaga layanan tetap aktif selama halaman game tersambung. Layanan gratis juga dapat restart sewaktu-waktu. Karena itu, integrasi ini untuk uji coba, bukan siaran penting/produksi.
 
 ## Pemeriksaan otomatis
 Jalankan dengan Node.js 22 atau lebih baru:
