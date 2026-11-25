@@ -33,7 +33,7 @@ button,input{font:inherit}button{border:0;cursor:pointer;font-weight:800;color:#
 <section class="panel" id="tiktokPanel">
 <div class="section-title">📡 TIKTOK LIVE <span>REAL CHAT</span></div>
 <div style="font-size:12px;color:var(--muted);margin-bottom:8px">Akun target: <b style="color:var(--cyan)">@chuanki10</b></div>
-<div class="name-row"><input id="bridgeUrl" type="url" inputmode="url" placeholder="URL server Render (https://...onrender.com)" aria-label="URL server penghubung"></div>
+<div class="name-row"><input id="bridgeUrl" type="url" inputmode="url" placeholder="Server lokal HP: http://127.0.0.1:3000" value="http://127.0.0.1:3000" aria-label="URL server penghubung"></div>
 <div class="controls" style="margin-top:0"><button id="bridgeConnectBtn">🔗 HUBUNGKAN LIVE</button><button id="bridgeDisconnectBtn" class="secondary" disabled>PUTUSKAN</button></div>
 <div id="bridgeStatus" class="hint" role="status" aria-live="polite">Belum terhubung ke server penghubung.</div>
 <div class="hint" id="bridgeCount">Komentar LIVE diterima: 0</div>
@@ -108,8 +108,8 @@ function loadSocketIoClient(base) {
 }
 $("bridgeConnectBtn").addEventListener("click", async () => {
   const base = $("bridgeUrl").value.trim().replace(/\/+$/, "");
-  if (!/^https:\/\//i.test(base)) {
-    setBridgeStatus("Masukkan URL server Render yang diawali https://", "#ffb13b");
+  if (!(/^https:\/\//i.test(base) || /^http:\/\/(127\.0\.0\.1|localhost)(:\\d+)?$/i.test(base))) {
+    setBridgeStatus("Gunakan URL HTTPS server atau alamat lokal HP http://127.0.0.1:3000.", "#ffb13b");
     return;
   }
   if (ngacologyLiveSocket?.connected) {
