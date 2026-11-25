@@ -89,6 +89,7 @@ $("username").addEventListener("input",drawBoard);
 
 let ngacologyLiveSocket = null;
 let ngacologyBridgeBase = "";
+let ngacologyKeepaliveTimer = null;
 function setBridgeStatus(message, color) {
   const el = $("bridgeStatus");
   if (!el) return;
@@ -125,6 +126,8 @@ $("bridgeConnectBtn").addEventListener("click", async () => {
     ngacologyBridgeBase = base;
     ngacologyLiveSocket = window.io(base, { transports: ["websocket", "polling"], reconnection: true });
     ngacologyLiveSocket.on("connect", () => {
+      if (ngacologyKeepaliveTimer) clearInterval(ngacologyKeepaliveTimer);
+      ngacologyKeepaliveTimer = setInterval(() => { if (ngacologyLiveSocket?.connected) ngacologyLiveSocket.emit("keepalive"); }, 30000);
       $("bridgeDisconnectBtn").disabled = false;
       setBridgeStatus("Terhubung ke server. Status TikTok: " + (initial.message || initial.state), "var(--green)");
     });
@@ -152,6 +155,8 @@ $("bridgeConnectBtn").addEventListener("click", async () => {
   }
 });
 $("bridgeDisconnectBtn").addEventListener("click", () => {
+  if (ngacologyKeepaliveTimer) clearInterval(ngacologyKeepaliveTimer);
+  ngacologyKeepaliveTimer = null;
   if (ngacologyLiveSocket) ngacologyLiveSocket.disconnect();
   $("bridgeDisconnectBtn").disabled = true;
   setBridgeStatus("Koneksi browser ke server diputus. Server tetap memantau LIVE.", "var(--muted)");
