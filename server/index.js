@@ -42,7 +42,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function runTikTokBridge() {
   while (!shuttingDown) {
-    const connection = new TikTokLiveConnection(TIKTOK_USERNAME);
+    const connection = new TikTokLiveConnection(TIKTOK_USERNAME, {});
     activeConnection = connection;
 
     connection.on(WebcastEvent.CHAT, event => {
