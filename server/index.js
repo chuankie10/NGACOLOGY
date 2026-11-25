@@ -12,6 +12,7 @@ const httpServer = http.createServer(app);
 const io = new Server(httpServer, { cors: { origin: "*", methods: ["GET"] } });
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || (process.env.RENDER ? "0.0.0.0" : "127.0.0.1");
+app.use(express.static(appRoot, { index: false }));
 const TIKTOK_USERNAME = (process.env.TIKTOK_USERNAME || "chuanki10").replace(/^@/, "");
 let bridgeStatus = { state: "starting", username: TIKTOK_USERNAME, message: "Menyiapkan koneksi TikTok LIVE." };
 let totalComments = 0;
