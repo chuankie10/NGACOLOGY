@@ -108,7 +108,7 @@ function loadSocketIoClient(base) {
 }
 $("bridgeConnectBtn").addEventListener("click", async () => {
   const base = $("bridgeUrl").value.trim().replace(/\/+$/, "");
-  if (!(/^https:\/\//i.test(base) || /^http:\/\/(127\.0\.0\.1|localhost)(:\\d+)?$/i.test(base))) {
+  if (!(/^https:\/\//i.test(base) || /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/i.test(base))) {
     setBridgeStatus("Gunakan URL HTTPS server atau alamat lokal HP http://127.0.0.1:3000.", "#ffb13b");
     return;
   }
