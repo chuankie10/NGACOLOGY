@@ -15,7 +15,7 @@ Buka `index.html` melalui browser atau host sebagai situs statis. Tidak memerluk
 - Input nama dan jawaban secara manual.
 - Auto-Bot untuk simulasi permainan.
 - Efek suara sederhana dan animasi.
-- Hook `window.handleTikTokComment(username, avatarUrl, commentText)` sebagai titik integrasi untuk konektor komentar yang sah.
+- Panel koneksi TikTok LIVE melalui server penghubung (memerlukan deploy Render; belum aktif sampai server diterbitkan).
 
 ## Catatan integrasi TikTok
 Mode yang tersedia saat ini adalah simulasi komentar di browser. Hook global disiapkan untuk integrasi, tetapi koneksi TikTok Live sungguhan memerlukan layanan/konektor eksternal yang kompatibel dan konfigurasi terpisah. Jangan menganggap chat simulasi sebagai chat live sungguhan.
