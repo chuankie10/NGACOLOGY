@@ -28,3 +28,25 @@ node scripts/validate.mjs
 ```
 
 GitHub Actions menjalankan pemeriksaan yang sama pada setiap push ke `main` dan pull request.
+
+## Status pengujian
+
+Pemeriksaan otomatis GitHub Actions saat ini mencakup:
+- Sintaks JavaScript di halaman utama.
+- Kesesuaian bank soal sumber dan data yang tertanam di game.
+- 50 pertanyaan dan 250 jawaban.
+- Simulasi 50 ronde, timer, jeda/lanjut, skor, penolakan jawaban duplikat, hook komentar, leaderboard, reset, dan main ulang.
+
+Pemeriksaan otomatis belum menggantikan uji visual pada perangkat Android atau koneksi TikTok Live sungguhan.
+
+## Mengaktifkan tautan web (satu kali)
+
+Workflow deploy sudah disiapkan. Agar GitHub dapat menerbitkan game sebagai situs:
+1. Buka repository **Settings**.
+2. Pilih **Pages**.
+3. Pada **Build and deployment**, pilih **GitHub Actions** sebagai Source.
+
+Setelah Pages diaktifkan, workflow deployment dapat menerbitkan game di:
+`https://chuankie10.github.io/NGACOLOGY/`
+
+Jika situs belum tersedia, periksa tab **Actions** dan pastikan workflow **Deploy NGACOLOGY to GitHub Pages** berhasil.
