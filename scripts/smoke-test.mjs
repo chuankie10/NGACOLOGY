@@ -53,7 +53,7 @@ assert.equal(state.phase,"playing");
 assert.equal(document.getElementById("answers").children.length,5);
 assert.equal(QUESTION_BANK.length,50);
 timers.get(state.timer)();
-assert.equal(state.seconds,59,"Timer harus berkurang satu detik");
+assert.equal(state.seconds,119,"Timer harus berkurang satu detik dari 120 detik");
 document.getElementById("startBtn").listeners.click();
 assert.equal(state.phase,"paused");
 document.getElementById("startBtn").listeners.click();
