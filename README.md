@@ -15,30 +15,49 @@ Buka `index.html` melalui browser atau host sebagai situs statis. Tidak memerluk
 - Input nama dan jawaban secara manual.
 - Auto-Bot untuk simulasi permainan.
 - Efek suara sederhana dan animasi.
-- Panel koneksi TikTok LIVE melalui server penghubung (memerlukan deploy Render; belum aktif sampai server diterbitkan).
+- Panel koneksi TikTok LIVE melalui server lokal Node.js di HP Android.
 
 ## Catatan integrasi TikTok
 Mode yang tersedia saat ini adalah simulasi komentar di browser. Hook global disiapkan untuk integrasi, tetapi koneksi TikTok Live sungguhan memerlukan layanan/konektor eksternal yang kompatibel dan konfigurasi terpisah. Jangan menganggap chat simulasi sebagai chat live sungguhan.
 
-## Integrasi TikTok LIVE (uji coba)
+## Integrasi TikTok LIVE (uji coba gratis dari HP Android)
 
-Repository ini sekarang menyertakan server Node.js pada folder `server/` dan konfigurasi Render Blueprint pada `render.yaml`.
+Server penghubung dapat dijalankan langsung di HP Android menggunakan Termux. Dengan cara ini tidak diperlukan Render, kartu pembayaran, VPS, atau hosting berbayar.
 
-- Server membaca komentar LIVE publik untuk akun yang ditetapkan melalui `TIKTOK_USERNAME` (default: `chuanki10`).
-- Halaman game menerima komentar server melalui Socket.IO dan meneruskannya ke `window.handleTikTokComment()`.
+- Target LIVE: `chuanki10` (dapat diubah melalui variabel `TIKTOK_USERNAME`).
+- Server lokal menyajikan game dan membaca komentar LIVE pada proses Node.js yang sama.
+- Browser game terhubung ke `http://127.0.0.1:3000`; alamat ini hanya berlaku pada HP yang menjalankan Termux.
 - Tidak diperlukan password, OTP, cookie, atau login TikTok untuk membaca LIVE publik.
-- Konektor `tiktok-live-connector` adalah proyek tidak resmi/reverse-engineered; TikTok dapat mengubah protokol dan koneksi bisa gagal sewaktu-waktu.
-- Konektor ini menggunakan layanan signing pihak ketiga. Jangan menambahkan cookie atau kredensial akun ke konfigurasi.
-- Library konektor berlisensi AGPL-3.0; kode integrasi server di repository ini tersedia secara publik.
+- `tiktok-live-connector` adalah konektor tidak resmi/reverse-engineered. TikTok dapat mengubah protokol dan koneksi dapat gagal sewaktu-waktu.
+- Konektor menggunakan layanan signing pihak ketiga (Euler Stream) dengan batas komunitas gratis; ketersediaan dan batas gratisnya tidak dijamin.
+- Library konektor berlisensi AGPL-3.0.
 
-### Deploy server penghubung
-1. Masuk ke Render dan hubungkan akun GitHub.
-2. Pilih **New → Blueprint** lalu pilih repository `chuankie10/NGACOLOGY`.
-3. Render akan membaca `render.yaml`; pilih paket **Free** dan deploy.
-4. Setelah layanan aktif, salin alamat `https://...onrender.com`.
-5. Buka game NGACOLOGY, masukkan alamat tersebut di panel **TIKTOK LIVE**, lalu tekan **HUBUNGKAN LIVE**.
+### Persiapan satu kali di HP Android
 
-Render Free dapat tidur setelah 15 menit tanpa lalu lintas masuk; pesan WebSocket masuk menjaga layanan tetap aktif selama halaman game tersambung. Layanan gratis juga dapat restart sewaktu-waktu. Karena itu, integrasi ini untuk uji coba, bukan siaran penting/produksi.
+1. Instal Termux dari sumber resmi F-Droid atau GitHub Termux. Hindari versi Play Store yang sudah usang.
+2. Buka Termux dan jalankan perintah berikut:
+
+```bash
+pkg update -y && pkg install -y git nodejs-lts
+git clone https://github.com/chuankie10/NGACOLOGY.git
+cd NGACOLOGY/server && npm install
+```
+
+### Setiap kali akan bermain LIVE
+
+1. Buka Termux dan jalankan:
+
+```bash
+cd ~/NGACOLOGY && git pull --ff-only
+cd server && npm start
+```
+
+2. Biarkan Termux tetap berjalan. Kembali ke Chrome pada HP yang sama dan buka `http://127.0.0.1:3000`.
+3. Pada panel TIKTOK LIVE, pastikan alamat lokal `http://127.0.0.1:3000` terisi lalu tekan **HUBUNGKAN LIVE**.
+4. Mulai TikTok LIVE pada akun `@chuanki10`. Komentar penonton akan diteruskan ke game setelah konektor mendeteksi LIVE.
+5. Untuk menghentikan server, kembali ke Termux dan tekan `CTRL+C`.
+
+**Catatan Android:** Jangan paksa berhenti Termux. Izinkan penggunaan baterai tanpa pembatasan bila Android menghentikan proses. Mode ini paling cocok untuk satu HP dan uji coba; jika Android menutup Termux atau koneksi internet terputus, pembacaan komentar ikut berhenti. Termux dan Chrome harus berjalan pada HP yang sama. Tidak ada jaminan uptime seperti server cloud.
 
 ## Pemeriksaan otomatis
 Jalankan dengan Node.js 22 atau lebih baru:
