@@ -30,6 +30,14 @@ button,input{font:inherit}button{border:0;cursor:pointer;font-weight:800;color:#
 </main>
 <aside class="side">
 
+<section class="panel" id="tiktokPanel">
+<div class="section-title">📡 TIKTOK LIVE <span>REAL CHAT</span></div>
+<div style="font-size:12px;color:var(--muted);margin-bottom:8px">Akun target: <b style="color:var(--cyan)">@chuanki10</b></div>
+<div class="name-row"><input id="bridgeUrl" type="url" inputmode="url" placeholder="URL server Render (https://...onrender.com)" aria-label="URL server penghubung"></div>
+<div class="controls" style="margin-top:0"><button id="bridgeConnectBtn">🔗 HUBUNGKAN LIVE</button><button id="bridgeDisconnectBtn" class="secondary" disabled>PUTUSKAN</button></div>
+<div id="bridgeStatus" class="hint" role="status" aria-live="polite">Belum terhubung ke server penghubung.</div>
+<div class="hint" id="bridgeCount">Komentar LIVE diterima: 0</div>
+</section>
 <section class="panel"><div class="section-title">🎖️ GELAR PEMAIN</div><div id="myRank" class="empty">Kumpulkan poin untuk naik pangkat!</div><div class="botrow"><label for="botToggle">🤖 Aktifkan Auto-Bot</label><input class="switch" id="botToggle" type="checkbox"></div></section>
 <section class="panel chatpanel"><div class="section-title">💬 SIMULASI LIVE CHAT <span id="chatCount">0 pesan</span></div><div class="name-row"><input id="username" maxlength="20" value="Penonton" aria-label="Nama pemain"><button id="botOnce" class="secondary">🤖 Bot</button></div><div class="chatlog" id="chatlog" aria-live="polite"><p class="msg">👋 <b>Profesor Totok:</b> Tulis jawabanmu di bawah!</p></div><form class="chat-form" id="chatForm"><input id="comment" maxlength="100" placeholder="Ketik jawaban..." autocomplete="off" required><button type="submit">KIRIM</button></form></section>
 </aside>
@@ -78,6 +86,77 @@ $("botOnce").addEventListener("click",()=>{if(!state.running){say("Mulai game du
 $("soundBtn").addEventListener("click",()=>{state.sound=!state.sound;$("soundBtn").textContent=state.sound?"🔊 Suara ON":"🔇 Suara OFF";$("soundBtn").setAttribute("aria-pressed",String(state.sound));if(state.sound)tone(500)});
 $("closeLevel").addEventListener("click",()=>$("levelPopup").classList.remove("show"));
 $("username").addEventListener("input",drawBoard);
+
+let ngacologyLiveSocket = null;
+let ngacologyBridgeBase = "";
+function setBridgeStatus(message, color) {
+  const el = $("bridgeStatus");
+  if (!el) return;
+  el.textContent = message;
+  el.style.color = color || "var(--muted)";
+}
+function loadSocketIoClient(base) {
+  return new Promise((resolve, reject) => {
+    if (typeof window.io === "function") return resolve();
+    const script = document.createElement("script");
+    script.src = base + "/socket.io/socket.io.js";
+    script.onload = resolve;
+    script.onerror = () => reject(new Error("Library koneksi gagal dimuat. Periksa URL server."));
+    document.head.append(script);
+  });
+}
+$("bridgeConnectBtn").addEventListener("click", async () => {
+  const base = $("bridgeUrl").value.trim().replace(/\/+$/, "");
+  if (!/^https:\/\//i.test(base)) {
+    setBridgeStatus("Masukkan URL server Render yang diawali https://", "#ffb13b");
+    return;
+  }
+  if (ngacologyLiveSocket?.connected) {
+    setBridgeStatus("Sudah terhubung ke server. Menunggu komentar LIVE.", "var(--green)");
+    return;
+  }
+  $("bridgeConnectBtn").disabled = true;
+  setBridgeStatus("Menghubungkan ke server penghubung...", "var(--yellow)");
+  try {
+    const response = await fetch(base + "/status", { cache: "no-store" });
+    if (!response.ok) throw new Error("Server belum merespons dengan benar.");
+    const initial = await response.json();
+    await loadSocketIoClient(base);
+    ngacologyBridgeBase = base;
+    ngacologyLiveSocket = window.io(base, { transports: ["websocket", "polling"], reconnection: true });
+    ngacologyLiveSocket.on("connect", () => {
+      $("bridgeDisconnectBtn").disabled = false;
+      setBridgeStatus("Terhubung ke server. Status TikTok: " + (initial.message || initial.state), "var(--green)");
+    });
+    ngacologyLiveSocket.on("bridge:status", status => {
+      const color = status.state === "connected" ? "var(--green)" : status.state === "warning" || status.state === "error" ? "#ff8c8c" : "var(--yellow)";
+      setBridgeStatus(status.message || status.state, color);
+    });
+    ngacologyLiveSocket.on("tiktok:chat", data => {
+      if (!data || !data.commentText) return;
+      window.handleTikTokComment(data.username || "Penonton", data.avatarUrl || "", data.commentText);
+      $("bridgeCount").textContent = "Komentar LIVE diterima: " + (data.totalComments || 0);
+    });
+    ngacologyLiveSocket.on("disconnect", () => {
+      $("bridgeDisconnectBtn").disabled = true;
+      setBridgeStatus("Koneksi ke server terputus. Mencoba menyambung kembali...", "#ffb13b");
+    });
+    ngacologyLiveSocket.on("connect_error", () => {
+      setBridgeStatus("Gagal tersambung. Periksa URL atau coba muat ulang halaman.", "#ff8c8c");
+    });
+    $("bridgeCount").textContent = "Komentar LIVE diterima: " + (initial.totalComments || 0);
+  } catch (error) {
+    setBridgeStatus(error.message || "Koneksi gagal.", "#ff8c8c");
+  } finally {
+    $("bridgeConnectBtn").disabled = false;
+  }
+});
+$("bridgeDisconnectBtn").addEventListener("click", () => {
+  if (ngacologyLiveSocket) ngacologyLiveSocket.disconnect();
+  $("bridgeDisconnectBtn").disabled = true;
+  setBridgeStatus("Koneksi browser ke server diputus. Server tetap memantau LIVE.", "var(--muted)");
+});
+
 window.handleTikTokComment=function(username,avatarUrl,commentText){accept(username,commentText)};
 window.NGACOLOGY={version:"1.2.0-test",questionCount:QUESTION_BANK.length,handleTikTokComment:window.handleTikTokComment};
 drawBoard();
