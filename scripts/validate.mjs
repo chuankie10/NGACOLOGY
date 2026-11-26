@@ -34,6 +34,11 @@ for (const file of bankFiles) assert.ok(html.includes('src="./' + file + '"'), "
 
 for (const required of [
   'const QUESTION_BANK = window.NGACOLOGY_QUESTIONS',
+  'function showLevelUp(name,title)',
+  'levelPopupTimer=setTimeout',
+  '},5000)',
+  'level-viewer-name',
+  'level-rank-title',
   'const WEIGHTS = [10,25,50,100,200]',
   'function startRound()',
   'function endRound(message)',
