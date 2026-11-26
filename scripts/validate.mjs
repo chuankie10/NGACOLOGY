@@ -44,7 +44,7 @@ for (const required of [
   '{min:6000,title:"🏆 Legenda Ngaco"}',
   '{min:5000,title:"🧠 Titipan Einstein"}',
   '{min:4000,title:"🌟 Master Idola"}',
-  '{min:3000,title:"🎓 Doktor"}',
+  '{min:3000,title:"🎓 Doktor Titipan"}',
   '{min:2000,title:"📚 Calon Sarjana"}',
   '{min:1000,title:"🐣 Anak Magang Ngaco"}',
   '{min:0,title:""}',
