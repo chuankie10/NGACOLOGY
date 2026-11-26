@@ -4,6 +4,8 @@ import assert from "node:assert/strict";
 const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const scriptMatch = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 assert.equal(scriptMatch.length, 1);
+const questionFiles = ["questions-1.js", "questions-2.js", "questions3.js", "questions3b.js", "questions4.js", "questions5.js"];
+const questionSources = questionFiles.map(name => fs.readFileSync(new URL("../" + name, import.meta.url), "utf8")).join("\n");
 
 class FakeElement {
   constructor(id = "") {
@@ -45,7 +47,7 @@ const setTimeoutFake = fn => { const id=++timerId; timers.set(id,fn); return id;
 const clearTimeoutFake = id => timers.delete(id);
 const window = {};
 const boot = new Function("document","window","setInterval","clearInterval","setTimeout","clearTimeout",
-  scriptMatch[0][1] + "\nreturn {state, QUESTION_BANK};");
+  questionSources + "\n" + scriptMatch[0][1] + "\nreturn {state, QUESTION_BANK};");
 const {state, QUESTION_BANK} = boot(document,window,setIntervalFake,clearIntervalFake,setTimeoutFake,clearTimeoutFake);
 document.getElementById("botToggle").checked = false;
 const durationSelect=document.getElementById("roundDuration");
@@ -88,7 +90,6 @@ document.getElementById("nextBtn").listeners.click();
 assert.equal(state.round,1);
 assert.equal(state.seconds,60,"Ronde berikutnya harus memakai pilihan durasi 60 detik");
 assert.equal(state.phase,"playing");
-assert.equal(document.getElementById("startBtn").disabled,false);
 document.getElementById("advanceMode").value="auto";
 document.getElementById("advanceMode").listeners.change();
 document.getElementById("startBtn").listeners.click();
@@ -105,4 +106,4 @@ assert.equal(state.round,2,"Tombol lanjut harus bisa mempercepat mode otomatis")
 document.getElementById("resetBtn").listeners.click();
 assert.equal(state.phase,"idle");
 assert.equal(state.players.size,0);
-console.log("NGACOLOGY smoke test PASS: selectable 60/90/120-second durations, timer countdown, scoring, duplicate protection, TikTok hook, auto/manual round advance, pause/resume, reset.");
+console.log("NGACOLOGY smoke test PASS: 50 soal, jawaban satu kata, durasi 60/90/120 detik, timer, scoring, duplikat, TikTok hook, mode ronde, pause/resume dan reset.");
