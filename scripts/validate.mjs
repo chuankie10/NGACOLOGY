@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
+const root = new URL("../", import.meta.url);
 const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const serverPath = fileURLToPath(new URL("../server/index.js", import.meta.url));
 const serverCheck = spawnSync(process.execPath, ["--check", serverPath], { encoding: "utf8" });
@@ -13,23 +14,26 @@ for (const scriptName of ["termux-setup.sh", "termux-start.sh", "termux-stop.sh"
   assert.equal(shellCheck.status, 0, "Sintaks " + scriptName + " harus valid: " + (shellCheck.stderr || ""));
 }
 
-const bankFile = JSON.parse(fs.readFileSync(new URL("../bank-soal.json", import.meta.url), "utf8"));
-
-assert.equal(bankFile.questions.length, 50, "Bank soal harus berisi 50 pertanyaan");
-assert.ok(bankFile.questions.every(q => Array.isArray(q.answers) && q.answers.length === 5), "Setiap pertanyaan harus memiliki 5 jawaban");
+const bankFiles = ["questions-1.js", "questions-2.js", "questions3.js", "questions3b.js", "questions4.js", "questions5.js"];
+let bank = [];
+for (let i = 0; i < bankFiles.length; i++) {
+  const source = fs.readFileSync(new URL("../" + bankFiles[i], import.meta.url), "utf8").trim();
+  const json = i === 0
+    ? source.replace(/^window\.NGACOLOGY_QUESTIONS\s*=\s*/, "").replace(/;\s*$/, "")
+    : source.replace(/^window\.NGACOLOGY_QUESTIONS\.push\(\.\.\./, "").replace(/\);\s*$/, "");
+  bank.push(...JSON.parse(json));
+}
+assert.equal(bank.length, 50, "Bank soal harus berisi tepat 50 pertanyaan");
+assert.ok(bank.every(q => typeof q.question === "string" && Array.isArray(q.answers) && q.answers.length === 5), "Setiap pertanyaan harus memiliki 5 jawaban");
+assert.ok(bank.every(q => q.answers.every(a => typeof a === "string" && a.trim().length > 0 && !/\s/.test(a))), "Semua jawaban harus tepat satu kata tanpa spasi");
 
 const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 assert.equal(scripts.length, 1, "Harus ada tepat satu inline script utama");
 new Function(scripts[0][1]);
-
-const embeddedMatch = html.match(/const QUESTION_BANK = (\[[\s\S]*?\]);\nconst WEIGHTS/);
-assert.ok(embeddedMatch, "Bank soal harus tertanam di halaman game");
-const embeddedBank = JSON.parse(embeddedMatch[1]);
-assert.equal(embeddedBank.length, 50, "Game harus memuat 50 pertanyaan");
-assert.ok(embeddedBank.every(q => q.answers.length === 5), "Game harus memuat 5 jawaban per pertanyaan");
-assert.deepEqual(embeddedBank, bankFile.questions.map(q => ({question:q.question, answers:q.answers.map(a => a.text)})), "Soal yang tertanam di game harus sama dengan bank-soal.json");
+for (const file of bankFiles) assert.ok(html.includes('src="./' + file + '"'), "File bank soal tidak dimuat: " + file);
 
 for (const required of [
+  'const QUESTION_BANK = window.NGACOLOGY_QUESTIONS',
   'const WEIGHTS = [10,25,50,100,200]',
   'function startRound()',
   'function endRound(message)',
@@ -43,6 +47,6 @@ for (const required of [
   'http://127.0.0.1:3000',
   '127\\.0\\.0\\.1',
   'state.phase==="finished"'
-]) assert.ok(html.includes(required), 'Fitur penting tidak ditemukan: ' + required);
+]) assert.ok(html.includes(required), "Fitur penting tidak ditemukan: " + required);
 
-console.log("NGACOLOGY validation PASS: game script, 50 questions, 250 answers, scoring, timer, leaderboard, Auto-Bot, TikTok hook, Node bridge and Android Termux scripts.");
+console.log("NGACOLOGY validation PASS: 50 pertanyaan, 250 jawaban satu kata, game, scoring, timer, leaderboard, Auto-Bot, TikTok hook, Node bridge dan skrip Android Termux.");
