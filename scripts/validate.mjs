@@ -42,7 +42,7 @@ for (const required of [
   'const WEIGHTS = [10,25,50,100,200]',
   '{min:10000,title:"👑 Dewa Kekacauan"}',
   '{min:6000,title:"🏆 Legenda Ngaco"}',
-  '{min:5000,title:"🧠 Titipan Einstein"}',
+  '{min:5000,title:"🧠 Titisan Einstein"}',
   '{min:4000,title:"🌟 Master Idola"}',
   '{min:3000,title:"🎓 Doktor Titipan"}',
   '{min:2000,title:"📚 Calon Sarjana"}',
